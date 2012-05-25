@@ -9,8 +9,8 @@
           <a class="brand" href="#">RailsEmberjs</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><a href="#loggedout">logout</a></li>
-              <li><a href="#loggedin">login</a></li>
+              <li><a href="#loggedout" {{action "logout" target="Railse.homeController"}}>logout</a></li>
+              <li><a href="#loggedin" {{action "login" target="Railse.homeController"}}>login</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
