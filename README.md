@@ -3,10 +3,11 @@
 A sample application(under development) to showcase use of ember.js with ruby on rails.
 
 Thanks to the developers of following gems:
-1. ember-rails https://github.com/emberjs/ember-rails
-2. ember-rest-rails https://github.com/mmacedo/ember-rest-rails
-3. ember-layout https://github.com/ghempton/ember-layout
-4. ember-routemanager https://github.com/ghempton/ember-routemanager
+
+1. [ember-rails](https://github.com/emberjs/ember-rails)
+2. [ember-rest-rails](https://github.com/mmacedo/ember-rest-rails)
+3. [ember-layout] (https://github.com/ghempton/ember-layout)
+4. [ember-routemanager](https://github.com/ghempton/ember-routemanager)
 
 ### Feature Plan:
 
