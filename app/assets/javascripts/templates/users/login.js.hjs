@@ -1,0 +1,17 @@
+{{#if loggedin}}
+<h4>Welcome User, you have loggedin into our system successfully</h4>
+{{else}}
+<p>
+    user the following username and password:<br />
+    <b>username:</b> admin<br />
+    <b>password:</b> password<br />
+</p>
+<div class="errors">
+</div>
+
+  {{view Ember.TextField valueBinding="email" placeholder="Email"}}
+  {{view Ember.TextField type="password" valueBinding="password"  placeholder="Password"}}
+  <button type="submit">
+    Login
+  </button>
+{{/if}}

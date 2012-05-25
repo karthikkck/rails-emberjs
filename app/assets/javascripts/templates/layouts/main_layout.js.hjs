@@ -1,0 +1,37 @@
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">RailsEmberjs</a>
+          <div class="container-fluid nav-collapse">
+            <ul class="nav">
+              <li><a href="#loggedout">logout</a></li>
+              <li><a href="#loggedin">login</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div id="left-column" class="well sidebar-nav">
+          {{dynamicView sidebar}}
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div id="content" class="span9">
+        {{dynamicView}}
+        </div>
+      </div><!--/row-->
+
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
+
+    </div> <!-- /container -->
+
