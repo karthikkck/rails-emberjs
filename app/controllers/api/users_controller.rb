@@ -17,6 +17,7 @@ class Api::UsersController < Api::ApiController
     end
   end
 
+=begin
   def forgot_password
     @user = User.find_by_email(params[:email])
     unless @user.present?
@@ -27,6 +28,7 @@ class Api::UsersController < Api::ApiController
       end
     end
   end
+=end
 
   def sign_in
     @user = User.find_by_email(params[:email])
@@ -34,7 +36,7 @@ class Api::UsersController < Api::ApiController
       render_errors('api/shared/errors', 'Username and password do not match')
     else
       respond_to do |format|
-        format.json { render :json=> {message: 'Login successful'}.to_json }
+        format.json { render :json=> {user: @user, message: 'Login successful'}.to_json }
       end
     end
   end

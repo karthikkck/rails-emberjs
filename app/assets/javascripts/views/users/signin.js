@@ -16,8 +16,8 @@ Railse.SignInView = Em.View.extend({
       data: {email: email, password: password},
       dataType: "json",
       success: function(e) {
-        self.remove();
-        $('article').html(e.message);
+        Railse.current_user = e.user;
+        Railse.usersController.login();
       },
       error: function(e) {
         var errorsObject = $.parseJSON(e.responseText);
