@@ -17,6 +17,18 @@ class Api::UsersController < Api::ApiController
     end
   end
 
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update_attributes(params[:user])
+      render_errors('api/shared/errors',@user.errors)
+    else
+      respond_to do |format|
+        format.json { render :json=> { user: @user, message: 'successful'}.to_json }
+      end
+    end
+  end
+
 =begin
   def forgot_password
     @user = User.find_by_email(params[:email])

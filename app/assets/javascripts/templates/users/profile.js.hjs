@@ -1,0 +1,18 @@
+<h4>You can update your profile below:</h4>
+<div class="errors">
+</div>
+
+{{#with user}}
+  {{view Ember.TextField valueBinding="first_name" placeholder="First Name"}}
+  <br />
+  {{view Ember.TextField valueBinding="last_name" placeholder="Last Name"}}
+  <br />
+  {{view Ember.TextField valueBinding="email" readonly="true"}}
+  <br />
+  <button class="btn btn-primary" type="submit">
+    Update
+  </button>
+{{/with}}
+
+  <a style="margin-left: 20px;" class="btn btn-primary" href="#" {{action "home" target="Railse.homeController"}}>Cancel</a>
+

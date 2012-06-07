@@ -11,9 +11,10 @@ Railse.routeManager = Em.RouteManager.create({
       Railse.layout.set('sidebar', signInView);
     }
   }),
+
   loggedin: Em.LayoutState.create({
     route: 'logged-in',
-    viewClass: Railse.HomePageView.extend({ text: 'you logged in successfully.' }),
+    viewClass: Railse.UserProfileView.extend(),
     enter: function (stateManager, transition) {
       this._super(stateManager, transition);
       var signInView = Railse.SignInView.create({ loggedin: true });

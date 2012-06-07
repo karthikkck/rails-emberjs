@@ -25,8 +25,9 @@ class Api::ApiController < ApplicationController
   end
 
   def authenticate_request
-    @authentication_token = params[:authentication_token]
-    render_errors('api/shared/errors', ['users.not_authenticated'], :unauthorized) unless current_user.present?
+    logger.info request.headers['HTTP_API_KEY']
+    @authentication_token = request.headers['HTTP_API_KEY']
+    render_errors('api/shared/errors', message: 'not_authenticated') unless current_user.present?
   end
 
   def set_default_format

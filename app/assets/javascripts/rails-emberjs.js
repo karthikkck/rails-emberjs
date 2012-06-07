@@ -12,7 +12,12 @@
 //= require_tree ./models
 //= require_tree ./config
 
-var Railse = Em.Application.create();
+var Railse = Em.Application.create({
+  ready: function() {
+
+
+  }
+});
 
 Railse.layout = Em.View.create({
   templateName: 'templates_layouts_main_layout',
