@@ -24,6 +24,38 @@ Railse.SignInView = Em.View.extend({
         $(self.tagName).find('div.errors').html(errorsObject.errors);
       }
     });
+  },
+
+  register: function(event) {
+    var self = this;
+    var user = Railse.User.create();
+
+    user.email = self.get('email');
+    user.password = self.get('password');
+
+    event.preventDefault();
+
+    user.saveResource()
+      .fail( function(e) {
+        var errorString = '', key, errorsObject;
+
+        errorsObject = $.parseJSON(e.responseText);
+
+        $.each(errorsObject.errors, function(key, value) {
+          errorString += '<strong>' + key + ':</strong><br />';
+          $.each(value, function(arrayKey, arrayValue) {
+            errorString += arrayValue + '<br />';
+          });
+          errorString += '<br />';
+        });
+
+        $(self.tagName).find('div.errors').html(errorString);
+
+      })
+      .done(function(e) {
+        Railse.current_user = e.user;
+        Railse.usersController.login();
+      });
   }
 
 });

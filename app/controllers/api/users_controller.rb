@@ -12,7 +12,7 @@ class Api::UsersController < Api::ApiController
       render_errors('api/shared/errors',@user.errors)
     else
       respond_to do |format|
-        format.json { render :json=> {message: 'successful'}.to_json }
+        format.json { render :json=> { user: @user, message: 'successful'}.to_json }
       end
     end
   end
@@ -36,7 +36,7 @@ class Api::UsersController < Api::ApiController
       render_errors('api/shared/errors', 'Username and password do not match')
     else
       respond_to do |format|
-        format.json { render :json=> {user: @user, message: 'Login successful'}.to_json }
+        format.json { render :json=> { user: @user, message: 'Login successful'}.to_json }
       end
     end
   end

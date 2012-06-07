@@ -11,5 +11,5 @@
   <button class="btn btn-primary" type="submit">
     Login
   </button>
-  <a style="margin-left: 20px;" class="btn btn-primary" href="#register" {{action "register" target="Railse.usersController"}}>Register</a>
+  <a style="margin-left: 20px;" class="btn btn-primary" href="#" {{action "register"}}>Register</a>
 {{/if}}

@@ -19,11 +19,11 @@ Thanks to the developers of following gems:
 ### Already implemented features:
 
 1. The basic framework is ready with emberjs routes and layout managers.
+2. Login and Registration feature has been implemented.
 
-### Current working:
+### Currently working on:
 
-1. By seeing user login section do not assume that it has been implemented. :)
-2. The menu has been linked to routes and state change based on clicking "login" and "logout" has been implemented.
+1. Articles and sections
 
 ### Current routes.js file under app/assets/javascripts/config:
 
