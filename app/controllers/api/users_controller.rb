@@ -11,9 +11,7 @@ class Api::UsersController < Api::ApiController
     unless @user.save
       render_errors('api/shared/errors',@user.errors)
     else
-      respond_to do |format|
-        format.json { render :json=> { user: @user, message: 'successful'}.to_json }
-      end
+      render_messages('api/shared/messages', "Registration successful", @user, status = :ok)
     end
   end
 
@@ -21,11 +19,9 @@ class Api::UsersController < Api::ApiController
     @user = User.find(params[:id])
 
     if @user.update_attributes(params[:user])
-      render_errors('api/shared/errors',@user.errors)
+      render_messages('api/shared/messages', "successfully updated", @user, status = :ok)
     else
-      respond_to do |format|
-        format.json { render :json=> { user: @user, message: 'successful'}.to_json }
-      end
+      render_errors('api/shared/errors', @user.errors)
     end
   end
 
@@ -47,9 +43,7 @@ class Api::UsersController < Api::ApiController
     unless @user.present? && @user.authenticate(params[:password])
       render_errors('api/shared/errors', 'Username and password do not match')
     else
-      respond_to do |format|
-        format.json { render :json=> { user: @user, message: 'Login successful'}.to_json }
-      end
+      render_messages('api/shared/messages', "Logged-in successfully", @user, status = :ok)
     end
   end
 

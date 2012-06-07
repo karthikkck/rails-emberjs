@@ -16,8 +16,9 @@ Railse.SignInView = Em.View.extend({
       data: {email: email, password: password},
       dataType: "json",
       success: function(e) {
-        Railse.current_user = e.user;
+        Railse.current_user = e.data;
         Railse.usersController.login();
+        $(self.tagName).find('div.errors').html(errorsObject.errors);
       },
       error: function(e) {
         var errorsObject = $.parseJSON(e.responseText);
@@ -53,7 +54,7 @@ Railse.SignInView = Em.View.extend({
 
       })
       .done(function(e) {
-        Railse.current_user = e.user;
+        Railse.current_user = e.data;
         Railse.usersController.login();
       });
   }

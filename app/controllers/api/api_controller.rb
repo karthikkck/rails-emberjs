@@ -10,6 +10,14 @@ class Api::ApiController < ApplicationController
     render :json, template: template, status: status
   end
 
+  def render_messages(template = "api/#{controller_name}/errors", messages = '', data = [], status = :unprocessable_entity)
+    @messages = messages unless messages.blank?
+    @data = data unless data.blank?
+    template = 'api/shared/messages' unless template_exists?("messages", controller_name, false)
+
+    render :json, template: template, status: status
+  end
+
   private
 
   def current_user

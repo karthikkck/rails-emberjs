@@ -33,7 +33,7 @@ Railse.UserProfileView = Em.View.extend({
 
       })
       .done(function(e) {
-        alert('redirect to home with message');
+        $(self.tagName).find('div.errors').html(e.messages);
       });
 
   }
