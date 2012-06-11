@@ -20,6 +20,9 @@ Thanks to the developers of following gems:
 
 1. The basic framework is ready with emberjs routes and layout managers.
 2. Login and Registration feature has been implemented.
+3. Articles list created for public users and linked with database.
+
+*Note:* Use console to add new articles.
 
 ### Currently working on:
 

@@ -22,7 +22,7 @@ Railse.routeManager = Em.RouteManager.create({
     }),
     articles: Em.LayoutState.create({
     route: 'articles',
-    viewClass: Railse.HomePageView.extend({ text: 'you are inside articles view' }),
+    viewClass: Railse.ArticlesView.extend(),
     enter: function (stateManager, transition) {
       this._super(stateManager, transition);
     }

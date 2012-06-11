@@ -1,4 +1,4 @@
-class SectionsController < ApplicationController
+class Api::SectionsController < Api::ApiController
   skip_before_filter :authenticate_request, :only => [:index, :show]
 
   def index

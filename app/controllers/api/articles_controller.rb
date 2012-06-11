@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+class Api::ArticlesController < Api::ApiController
   skip_before_filter :authenticate_request, :only => [:index, :show]
 
   def index
@@ -6,7 +6,12 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    if params[:id].present?
+      @article = Article.find(params[:id])
+    else
+      @article = Article.all
+      render :json => @article
+    end
   end
 
   def create

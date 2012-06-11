@@ -1,3 +1,4 @@
 {{#each initialMenu}}
     <li><a href="#" {{action this.action target=this.controllername}}>{{unbound this.name}}</a></li>
 {{/each}}
+    <li><a href="#" {{action "articles" target="Railse.articlesController"}}>articles(static link)</a></li>

@@ -6,10 +6,10 @@
 //= require ember-layout
 //= require ember-routemanager
 //= require_self
+//= require_tree ./models
 //= require_tree ./controllers
 //= require_tree ./templates
 //= require_tree ./views
-//= require_tree ./models
 //= require_tree ./config
 
 var Railse = Em.Application.create({
