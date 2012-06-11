@@ -1,0 +1,3 @@
+{{#each initialMenu}}
+    <li><a href="#" {{action this.action target=this.controllername}}>{{unbound this.name}}</a></li>
+{{/each}}
