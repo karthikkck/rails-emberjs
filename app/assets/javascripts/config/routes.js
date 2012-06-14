@@ -14,15 +14,8 @@ Railse.routeManager = Em.RouteManager.create({
       Railse.layout.set('mainnav', mainNavView);
     },
     home: Em.LayoutState.create({
-    route: 'home',
-    viewClass: Railse.HomePageView.extend({ text: 'you are currently loggedout.' }),
-    enter: function (stateManager, transition) {
-      this._super(stateManager, transition);
-    }
-    }),
-    articles: Em.LayoutState.create({
-      route: 'articles',
-      viewClass: Railse.ArticlesView.extend(),
+      route: 'home',
+      viewClass: Railse.HomePageView.extend({ text: 'you are currently loggedout.' }),
       enter: function (stateManager, transition) {
         this._super(stateManager, transition);
       }

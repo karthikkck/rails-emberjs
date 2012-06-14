@@ -12,6 +12,7 @@ Railse.ArticleListView = Em.View.extend({
     .done(function(e) {
       var articleShowView = Railse.ArticleShowView.create({ article: e });
       thistag._parentView.bindingContext.set('articlecontent', articleShowView);
+      Railse.routeManager.goToState('loggedout.articles.show');
     });
   }
 });
