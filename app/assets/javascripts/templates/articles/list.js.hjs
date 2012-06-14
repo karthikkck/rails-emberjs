@@ -1,2 +1,2 @@
-<a href="#">{{article.name}}</a>
+<a href="#" {{bindAttr id="1"}}{{action "show"}}>{{article.name}}</a>
 

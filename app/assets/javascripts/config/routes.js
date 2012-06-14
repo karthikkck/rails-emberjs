@@ -21,11 +21,11 @@ Railse.routeManager = Em.RouteManager.create({
     }
     }),
     articles: Em.LayoutState.create({
-    route: 'articles',
-    viewClass: Railse.ArticlesView.extend(),
-    enter: function (stateManager, transition) {
-      this._super(stateManager, transition);
-    }
+      route: 'articles',
+      viewClass: Railse.ArticlesView.extend(),
+      enter: function (stateManager, transition) {
+        this._super(stateManager, transition);
+      }
     })
   }),
 

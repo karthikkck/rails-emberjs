@@ -1,3 +1,5 @@
 {{#each articles}}
 {{view Railse.ArticleListView articleBinding="this"}}
 {{/each}}
+
+{{dynamicView articlecontent}}
